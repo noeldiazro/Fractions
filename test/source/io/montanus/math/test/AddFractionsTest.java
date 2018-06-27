@@ -3,8 +3,6 @@ package io.montanus.math.test;
 import io.montanus.math.Fraction;
 import org.junit.Test;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import static org.junit.Assert.assertEquals;
 
 public class AddFractionsTest {
@@ -30,5 +28,12 @@ public class AddFractionsTest {
     public void nonZeroNonNegativeIntegers() {
         final Fraction sum = new Fraction(3).plus(new Fraction(4));
         assertEquals(7, sum.intValue());
+    }
+
+    @Test
+    public void sameNonTrivialDenominator() {
+        final Fraction sum = new Fraction(1, 5).plus(new Fraction(2, 5));
+        assertEquals(3, sum.getNumerator());
+        assertEquals(5, sum.getDenominator());
     }
 }
