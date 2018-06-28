@@ -21,17 +21,17 @@ public class GreatestCommonDivisorTest {
         return Arrays.asList(new Object[][]{
                 {1, 1, 1},
                 {2, 2, 2},
-                {-1, -1, -1},
+                {-1, -1, 1},
                 {2, 3, 1},
                 {4, 7, 1},
-                {-2, -3, -1},
+                {-2, -3, 1},
                 {3, 9, 3},
                 {5, 30, 5},
                 {6, 8, 2},
                 {49, 315, 7},
-                {-24, -28, -4},
+                {-24, -28, 4},
                 {-24, 28, 4},
-                {24, -28, -4}
+                {24, -28, 4}
         });
     }
 
@@ -48,7 +48,7 @@ public class GreatestCommonDivisorTest {
 
     private static int gcd(int a, int b) {
         if (b == 0)
-            return a;
+            return Math.abs(a);
         else
             return gcd(b, a % b);
     }
