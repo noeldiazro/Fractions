@@ -1,5 +1,6 @@
 package io.montanus.math.test;
 
+import io.montanus.math.NumberTheory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -43,13 +44,7 @@ public class GreatestCommonDivisorTest {
 
     @Test
     public void test() {
-        assertEquals(expectedGcd, gcd(a, b));
+        assertEquals(expectedGcd, NumberTheory.gcd(a, b));
     }
 
-    private static int gcd(int a, int b) {
-        if (b == 0)
-            return Math.abs(a);
-        else
-            return gcd(b, a % b);
-    }
 }
